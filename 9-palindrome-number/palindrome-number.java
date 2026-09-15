@@ -1,18 +1,17 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        String s = x + "";
+        int rev = 0; int temp = x;
+        while(x>0){
+            int rem =x%10;
+            rev = rev*10+rem;
+            x = x/10;
 
-        int i = 0;
-        int j = s.length() - 1;
-
-        while (i < j) {
-            if (s.charAt(i) != s.charAt(j)) {
-                return false;
-            }
-            i++;
-            j--;
         }
-
-        return true;
+        if(temp==rev){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
